@@ -24,15 +24,28 @@
       </div>
 
       <div class="roll">
-          <button class="button-roll">Roll Dice</button>
+        <button class="button-roll">Roll Dice</button>
       </div>
 
       <div class="controls">
-          <h2>Controls</h2>
-          <button class="button-hold">Hold</button>
-          <button class="button-new">New Game</button>
+        <h2>Controls</h2>
+        <button class="button-hold">Hold</button>
+        <button class="button-new">New Game</button>
       </div>
 
+      <div class="rules">
+        <h3>Rules</h3>
+        <p>
+          Each turn, a player repeatedly rolls a die until either a 1 is rolled
+          or the player decides to "hold":
+          <ul>
+              <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+              <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+              <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+          </ul>
+        </p>
+
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
