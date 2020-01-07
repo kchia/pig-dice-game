@@ -9,6 +9,7 @@
 document.querySelector('.button-roll').addEventListener('click', roll);
 
 function roll() {
-  let die = Math.floor(Math.random() * 6) + 1; //selects number from 1 to 6
+  const die = Math.floor(Math.random() * 6) + 1; //selects number from 1 to 6
   console.log(die);
+  document.querySelector('.die').src = 'dice-' + die + '.png';
 }
