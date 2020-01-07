@@ -1,0 +1,20 @@
+h1 {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  padding: 50px;
+}
+
+.player1-panel {
+  grid-column: 1;
+}
+
+.player2-panel {
+  grid-column: 4;
+}
+
+.roll {
+  text-align: center;
+}
