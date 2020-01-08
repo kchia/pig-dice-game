@@ -7,11 +7,11 @@ h1 {
   padding: 50px;
 }
 
-.player1-panel {
+.player-0-side {
   grid-column: 1;
 }
 
-.player2-panel {
+.player-1-side {
   grid-column: 4;
 }
 

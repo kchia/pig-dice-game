@@ -20,22 +20,25 @@ function rollHandler() {
   if (die !== 1) {
     holdScore += die;
     document.querySelector('.hold-score').innerText = holdScore;
-    console.log(holdScore);
   } else {
     holdScore = 0;
     document.querySelector('.hold-score').innerText = holdScore;
-    console.log(holdScore);
+
     nextPlayer();
   }
 }
 
 function holdHandler() {
-  score += holdScore;
-  holdScore = 0;
-  document.querySelector('.hold-score').innerText = holdScore;
-  document.querySelector('.overall-score').innerText = score;
-  console.log(`score: ${score}`);
-  nextPlayer();
+  if (score < 20) {
+    score += holdScore;
+    holdScore = 0;
+    document.querySelector('.hold-score').innerText = holdScore;
+    document.querySelector('.overall-score').innerText = score;
+
+    nextPlayer();
+  } else if (score >= 20) {
+    console.log('you win!');
+  }
 }
 
 function nextPlayer() {
