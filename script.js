@@ -16,6 +16,9 @@ document.querySelector('.button-roll').addEventListener('click', rollHandler);
 //hold function
 document.querySelector('.button-hold').addEventListener('click', holdHandler);
 
+//new game function
+document.querySelector('.button-new').addEventListener('click', newGameHandler);
+
 function rollHandler() {
   const die = Math.floor(Math.random() * 6) + 1; //selects number from 1 to 6
   document.querySelector('.die').src = 'dice-' + die + '.png';
@@ -42,13 +45,13 @@ function holdHandler() {
   document.querySelector('#overall-score-' + currentPlayer).innerText =
     score[currentPlayer];
   if (score[currentPlayer] >= 20) {
-      if (currentPlayer === 0) {
-          alert('Player 1 wins!')
-      } else {
-          alert('Player 2 wins!')
-      }
+    if (currentPlayer === 0) {
+      alert('Player 1 wins!');
+    } else {
+      alert('Player 2 wins!');
+    }
   } else {
-      nextPlayer();
+    nextPlayer();
   }
 }
 //change players
@@ -58,4 +61,15 @@ function nextPlayer() {
   } else {
     currentPlayer = 0;
   }
+}
+
+//new game
+function newGameHandler() {
+  holdScore = 0;
+  score = [0, 0];
+  currentPlayer = 0;
+  document.querySelector('#hold-score-0').innerText = holdScore;
+  document.querySelector('#hold-score-1').innerText = holdScore;
+  document.querySelector('#overall-score-0').innerText = score[currentPlayer];
+  document.querySelector('#overall-score-1').innerText = score[currentPlayer];
 }
