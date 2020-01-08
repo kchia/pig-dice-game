@@ -6,6 +6,7 @@
 // The first player to score 100 or more points wins.
 let holdScore = 0;
 let score = 0;
+let currentPlayer = 0;
 
 //roll function
 document.querySelector('.button-roll').addEventListener('click', rollHandler);
@@ -19,10 +20,14 @@ function rollHandler() {
   // adding rolls to hold score
   if (die !== 1) {
     holdScore += die;
-    document.querySelector('.hold-score').innerText = holdScore;
+    document.querySelector(
+      '#hold-score-' + currentPlayer
+    ).innerText = holdScore;
   } else {
     holdScore = 0;
-    document.querySelector('.hold-score').innerText = holdScore;
+    document.querySelector(
+      '#hold-score-' + currentPlayer
+    ).innerText = holdScore;
 
     nextPlayer();
   }
@@ -32,15 +37,20 @@ function holdHandler() {
   if (score < 20) {
     score += holdScore;
     holdScore = 0;
-    document.querySelector('.hold-score').innerText = holdScore;
-    document.querySelector('.overall-score').innerText = score;
-
+    document.querySelector(
+      '#hold-score-' + currentPlayer
+    ).innerText = holdScore;
+    document.querySelector('#overall-score-' + currentPlayer).innerText = score;
     nextPlayer();
   } else if (score >= 20) {
     console.log('you win!');
   }
 }
-
+//change players
 function nextPlayer() {
-  console.log('next players turn');
+  if (currentPlayer === 0) {
+    currentPlayer = 1;
+  } else {
+    currentPlayer = 0;
+  }
 }
