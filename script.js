@@ -4,8 +4,10 @@
 // If the player rolls any other number, it is added to their turn total and the player's turn continues.
 // If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
 // The first player to score 100 or more points wins.
+
 let holdScore = 0;
-let score = 0;
+//thanks to Chris W. for putting overall score in an array. Fixed bug of current player's score adding previous players score.
+let score = [0, 0]; 
 let currentPlayer = 0;
 
 //roll function
@@ -34,15 +36,16 @@ function rollHandler() {
 }
 
 function holdHandler() {
-  if (score < 20) {
-    score += holdScore;
+  if (score[currentPlayer] < 20) {
+    score[currentPlayer] += holdScore;
     holdScore = 0;
     document.querySelector(
       '#hold-score-' + currentPlayer
     ).innerText = holdScore;
-    document.querySelector('#overall-score-' + currentPlayer).innerText = score;
+    document.querySelector('#overall-score-' + currentPlayer).innerText =
+      score[currentPlayer];
     nextPlayer();
-  } else if (score >= 20) {
+  } else if (score[currentPlayer] >= 20) {
     console.log('you win!');
   }
 }
