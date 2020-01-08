@@ -7,7 +7,7 @@
 
 let holdScore = 0;
 //thanks to Chris W. for putting overall score in an array. Fixed bug of current player's score adding previous players score.
-let score = [0, 0]; 
+let score = [0, 0];
 let currentPlayer = 0;
 
 //roll function
@@ -36,17 +36,19 @@ function rollHandler() {
 }
 
 function holdHandler() {
-  if (score[currentPlayer] < 20) {
-    score[currentPlayer] += holdScore;
-    holdScore = 0;
-    document.querySelector(
-      '#hold-score-' + currentPlayer
-    ).innerText = holdScore;
-    document.querySelector('#overall-score-' + currentPlayer).innerText =
-      score[currentPlayer];
-    nextPlayer();
-  } else if (score[currentPlayer] >= 20) {
-    console.log('you win!');
+  score[currentPlayer] += holdScore;
+  holdScore = 0;
+  document.querySelector('#hold-score-' + currentPlayer).innerText = holdScore;
+  document.querySelector('#overall-score-' + currentPlayer).innerText =
+    score[currentPlayer];
+  if (score[currentPlayer] >= 20) {
+      if (currentPlayer === 0) {
+          alert('Player 1 wins!')
+      } else {
+          alert('Player 2 wins!')
+      }
+  } else {
+      nextPlayer();
   }
 }
 //change players
