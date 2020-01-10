@@ -5,10 +5,9 @@
 // If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
 // The first player to score 100 or more points wins.
 
-let holdScore = 0;
-//thanks to Chris W. for putting overall score in an array. Fixed bug of current player's score adding previous players score.
-let score = [0, 0];
-let currentPlayer = 0;
+let holdScore, score, currentPlayer;
+
+newGameHandler();
 
 //roll function
 document.querySelector('.button-roll').addEventListener('click', rollHandler);
