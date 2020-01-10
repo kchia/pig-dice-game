@@ -32,7 +32,7 @@ function rollHandler() {
     document.querySelector(
       '#hold-score-' + currentPlayer
     ).innerText = holdScore;
-
+    alert('You rolled a 1. Next turn!');
     nextPlayer();
   }
 }
