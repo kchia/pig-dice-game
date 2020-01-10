@@ -1,5 +1,6 @@
 html {
-  background-image: linear-gradient(blue, silver);
+  background-image: linear-gradient(#172853, #dee6e8);
+  font-family: 'Gelasio', serif;
 }
 
 body {
@@ -12,6 +13,8 @@ body {
 
 h1 {
   text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
 }
 
 .board {
@@ -28,8 +31,8 @@ h1 {
 }
 
 .controls {
-    text-align: center;
-    display: block;
+  text-align: center;
+  display: block;
 }
 
 .button-roll {
@@ -46,7 +49,7 @@ h1 {
 }
 
 img {
-  max-width: 10%;
+  max-width: 13%;
   height: auto;
 }
 
@@ -74,4 +77,35 @@ img {
 .button-new:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.score {
+  font-size: 20px;
+}
+
+.overall-score {
+  font-size: 20px;
+  font-weight: bold;
+  color: #218838;
+}
+
+.hold {
+  font-size: 20px;
+}
+
+.hold-score {
+  font-size: 20px;
+  font-weight: bold;
+  color: #dc3545;
+}
+
+h3 {
+  text-decoration: underline;
+  text-transform: uppercase;
 }
