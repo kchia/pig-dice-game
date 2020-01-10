@@ -2,6 +2,8 @@
 
 Simple dice game.
 
+Winning score is currently set to 20 for testing.
+
 Tech:
 JS, CSS, HTML
 
@@ -41,5 +43,5 @@ Redo project once we finish the React section.
 Get to platinum level.
 
 Feedback focus:
-DRYr code
+DRYr code.
 Styling tips.
