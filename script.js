@@ -1,3 +1,4 @@
+// Hou comment: Move lines 2 - 7 to your readme.
 // RULES
 // Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
 // If the player rolls a 1, they score nothing and it becomes the next player's turn.
@@ -20,15 +21,18 @@ document.querySelector('.button-new').addEventListener('click', newGameHandler);
 
 function rollHandler() {
   const die = Math.floor(Math.random() * 6) + 1; //selects number from 1 to 6
+  // Hou comment: How would you use template literal syntax here?
   document.querySelector('.die').src = 'dice-' + die + '.png';
   // adding rolls to hold score
   if (die !== 1) {
     holdScore += die;
+    // Hou comment: How would you use template literal syntax here?
     document.querySelector(
       '#hold-score-' + currentPlayer
     ).innerText = holdScore;
   } else {
     holdScore = 0;
+    // Hou comment: How would you use template literal syntax here?
     document.querySelector(
       '#hold-score-' + currentPlayer
     ).innerText = holdScore;
@@ -40,7 +44,9 @@ function rollHandler() {
 function holdHandler() {
   score[currentPlayer] += holdScore;
   holdScore = 0;
+  // Hou comment: How would you use template literal syntax here?
   document.querySelector('#hold-score-' + currentPlayer).innerText = holdScore;
+  // Hou comment: How would you use template literal syntax here?
   document.querySelector('#overall-score-' + currentPlayer).innerText =
     score[currentPlayer];
   if (score[currentPlayer] >= 20) {
@@ -49,9 +55,14 @@ function holdHandler() {
     } else {
       alert('Player 2 wins!');
     }
+    // Hou comment: You could refactor lines 53-57 to:
+    // alert(`Player ${currentPlayer + 1} wins!`);
   } else {
     nextPlayer();
   }
+
+  // Hou comment: You can use ternary to simplify lines 52 - 62 to:
+  // score[currentPlayer] >= 20 ? alert(`Player ${currentPlayer + 1} wins!`) : nextPlayer();
 }
 //change players
 function nextPlayer() {
@@ -60,6 +71,8 @@ function nextPlayer() {
   } else {
     currentPlayer = 0;
   }
+  // Hou comment: You can refactor using ternary operator
+  // currentPlayer === 0 ? 1 : 0;
 }
 
 //new game

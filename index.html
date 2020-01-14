@@ -16,6 +16,8 @@
 
     <div class="board">
       <div class="player-0-side">
+        <!-- Hou comment: Try to avoid using id if you could. You can use data-attributes to accomplish the same thing here. Same comment applies for lines 22,25,26,29,34,35,38,39, and 42-->
+        <!-- <div class="name" data-name="0">Player 1</div> -->
         <div class="name" id="name-0">Player 1</div>
         <div class="score" id="score-0">
           Score:
@@ -28,6 +30,7 @@
       </div>
 
       <div class="player-1-side">
+        <!-- Hou comment: we could perhaps use <h2></h2> for line 34 -->
         <div class="name" id="name-1">Player 2</div>
         <div class="score" id="score-1">
           Score:
@@ -50,6 +53,7 @@
       <button class="button-new">New Game</button>
     </div>
 
+    <!-- Hou comment: You can probably use <section></section> tag here to be more semantic-->
     <div class="rules">
       <h3>Rules</h3>
       <p>
